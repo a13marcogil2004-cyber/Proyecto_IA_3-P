@@ -22,3 +22,11 @@ def dividir(a, b):
 
 def potencia(a, b):
     return a ** b
+
+def pedir_numero(mensaje):
+    # Se intenta leer el numero hasta que el usuario escriba algo valido
+    while True:
+        try:
+            return float(input(mensaje))
+        except ValueError:
+            print("Eso no es un numero valido, intentalo de nuevo.")
