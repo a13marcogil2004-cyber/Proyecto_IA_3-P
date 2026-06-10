@@ -70,3 +70,25 @@ operaciones = {
     "4": ("Division", dividir),
     "5": ("Potencia", potencia),
 }
+
+def main():
+    print("Bienvenido a la calculadora con historial.")
+
+    while True:
+        mostrar_menu()
+        opcion = input("\nElige una opcion: ").strip()
+
+        if opcion in operaciones:
+            nombre, funcion = operaciones[opcion]
+
+            a = pedir_numero("Primer numero: ")
+            b = pedir_numero("Segundo numero: ")
+
+            try:
+                resultado = funcion(a, b)
+                expresion = f"{a} {nombre} {b}"
+                print(f"Resultado: {resultado}")
+                guardar_en_historial(expresion, resultado)
+
+            except ValueError as e:
+                print(f"Error: {e}")
