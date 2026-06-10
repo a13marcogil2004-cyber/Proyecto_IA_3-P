@@ -53,3 +53,28 @@ def ver_historial():
     else:
         print("\n--- Historial de operaciones ---")
         print(contenido)
+        def borrar_historial():
+    if os.path.exists(ARCHIVO_HISTORIAL):
+        os.remove(ARCHIVO_HISTORIAL)
+        print("Historial borrado.")
+    else:
+        print("No habia historial que borrar.")
+
+def mostrar_menu():
+    print("\n--- Calculadora ---")
+    print("1. Sumar")
+    print("2. Restar")
+    print("3. Multiplicar")
+    print("4. Dividir")
+    print("5. Potencia")
+    print("6. Ver historial")
+    print("7. Borrar historial")
+    print("8. Salir")
+
+operaciones = {
+    "1": ("Suma", sumar),
+    "2": ("Resta", restar),
+    "3": ("Multiplicacion", multiplicar),
+    "4": ("Division", dividir),
+    "5": ("Potencia", potencia),
+}
