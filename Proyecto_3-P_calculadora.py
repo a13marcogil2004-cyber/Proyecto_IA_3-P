@@ -92,3 +92,18 @@ def main():
 
             except ValueError as e:
                 print(f"Error: {e}")
+
+        elif opcion == "6":
+            ver_historial()
+
+        elif opcion == "7":
+            borrar_historial()
+
+        elif opcion == "8":
+            print("Hasta luego.")
+            break
+
+        else:
+            print("Opcion no valida, elige un numero del 1 al 8.")
+
+main()
